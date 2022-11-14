@@ -17,7 +17,7 @@ namespace NutsMini
         /// </summary>
         /// <param name="num"></param>
         /// <returns></returns>
-        static int Len(int num)
+        static int Len1(int num)
         {
             int digits = 1;
             while ((num /= 10) != 0)
@@ -31,7 +31,7 @@ namespace NutsMini
         /// </summary>
         /// <param name="num"></param>
         /// <returns></returns>
-        static int len(int num)
+        static int Len2(int num)
         {
             int len = 0;
             for (int i = 1; i < num; i *= 10)
@@ -40,5 +40,20 @@ namespace NutsMini
             }
             return len;
         }
+
+        /// <summary>
+        /// teller antall siffer i et tall, rekursivt. telleren "holdes" ved parameter
+        /// </summary>
+        /// <param name="num"></param>
+        /// <param name="numOfDigits"></param>
+        /// <returns></returns>
+        static int Len3(int num, int numOfDigits)
+        {
+            if (num == 0)
+                return numOfDigits;
+            return Len3(num / 10, ++numOfDigits);
+        }
+
+
     }
 }
